@@ -1,0 +1,99 @@
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+.hamburger img,
+ .close img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+body {
+  font-family: "Roboto Slab", serif;
+  padding: 0;
+  margin: 0;
+}
+header {
+  margin: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 50%;
+}
+.hamburger img,
+.close img {
+  width: 36px;
+  height: 36px;
+}
+/* for debug purposes - the close icon is white, so I've added a background color so you can see it. Feel free to remove if you wish */
+.close img {
+  background-color: black;
+}
+
+nav {
+    /* give the nav bar some braething room and hide it by deafault */
+    padding: 1rem;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    /* style the bar in one cell and the close button in the other */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+/* animate slide up/down */
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+
+}
+
+nav:target {
+    transform: translateY(0);
+}
+
+nav ul {
+    flex-basis: 80%;
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+color: yellow;
+}
+
+
+
+
+

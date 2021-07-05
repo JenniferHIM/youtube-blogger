@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+}
+
+#method1 {
+    background-color: #00bff3;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#method1 li {
+    display: inline-block;
+}
+
+#method1 > a {
+    flex-basis: 25%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#method2 {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+#method2 > a {
+    flex-basis: 25%;
+}
+
+#method2 nav {
+    flex-basis: 60%;
+}
+
+#method2 ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+#method2 li a {
+    background-color: #00bff3;
+    border-radius: 2rem;
+}
+
+#method li a:hover {
+    background-color: #ff715b;
+    color: white;
+}

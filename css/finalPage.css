@@ -1,0 +1,193 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    color: #ff715b;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Burger section */
+.logo {
+  width: 50%;
+}
+.hamburger img,
+.close img {
+  width: 36px;
+  height: 36px;
+}
+/* for debug purposes - the close icon is white, so I've added a background color so you can see it. Feel free to remove if you wish */
+.close img {
+  background-color: black;
+}
+nav {
+  padding: 1rem;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+
+nav:target {
+  transform: translateY(0);
+}
+nav ul {
+  flex-basis: 80%;
+}
+nav a {
+  display: block;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: #f0c808;
+}
+/* style for tablet: Logo centered on top, full navbar underneath */
+@media (min-width: 600px) {
+    .logo {
+        width: 35%;
+    }
+
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        transform: none;
+        transition: none;
+        background-color: transparent;
+        display: block;
+    }
+
+    .hamburger, 
+    .close {
+        display: none;
+    }
+
+    header {
+        margin: 2rem 0 0 0;
+        text-align: center;
+        display: block;
+    }
+
+    nav {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+        background-color: #00bbf3;
+        border-radius: 0rem;
+    }
+    
+}
+
+/* style for desktop: Logo and navbar next to each other */
+@media (min-width: 1000px) {
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 25%;
+    }
+
+    header nav {
+        flex-basis: 60%;
+    }
+
+    nav ul {
+        border-radius: 2rem;
+    }
+}
+
+/* Meet the Robots section */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+li {
+    background-image: linear-gradient(176deg, rgb(255, 246, 207) 35%, rgba(254, 206, 122, 1) 100%);
+    border-radius: 50%;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #ff715b;
+    flex-basis: 30%;
+
+}
+
+@media (max-width: 850px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .row {
+        justify-content: space-around;
+    }
+
+    .row li {
+        flex-basis: 40%;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .row li {
+        flex-basis: 60%;
+    }
+}
